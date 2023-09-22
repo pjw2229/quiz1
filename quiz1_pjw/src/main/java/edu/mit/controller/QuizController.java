@@ -25,10 +25,15 @@ public class QuizController {
 		
 	}
 	
+	@GetMapping("/result")
+	public void res() {
+		
+	}
+	
 	@PostMapping("/quiz2")
-	public String theQuiz2(TwoVO vo, RedirectAttributes rttr) {
+	public String theQuiz2(TwoVO vo, Model m) {
 		MyLogic3 m3 = new MyLogic3();
-		rttr.addFlashAttribute("sum", m3.addUp(vo.getNum1(), vo.getNum2()));
-		return "redirect:/quiz/result";
+		m.addAttribute("sum", m3.addUp(vo.getNum1(), vo.getNum2()));
+		return "quiz/result";
 	}
 }
