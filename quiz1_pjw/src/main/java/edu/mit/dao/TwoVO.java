@@ -1,4 +1,4 @@
-package edu.mit.domain;
+package edu.mit.dao;
 
 import lombok.Data;
 
