@@ -30,4 +30,5 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	<mybatis-spring:scan base-package="edu.mit.dao"/>
+	<context:component-scan base-package="edu.mit.logic" />
 </beans>
