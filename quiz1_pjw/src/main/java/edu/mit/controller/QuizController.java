@@ -12,4 +12,9 @@ public class QuizController {
 	public void friday(Model m) {
 		m.addAttribute("q1", "오늘은 금요일");
 	}
+	
+	@GetMapping("/quiz2")
+	public void gotoQuiz2() {
+		
+	}
 }
