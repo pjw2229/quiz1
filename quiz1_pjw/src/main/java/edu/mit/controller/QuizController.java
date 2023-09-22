@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mit.domain.TwoVO;
+import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping("/quiz/**")
+@Log4j
 public class QuizController {
 	@GetMapping("/quiz1")
 	public void friday(Model m) {
@@ -23,12 +25,8 @@ public class QuizController {
 	}
 	
 	@PostMapping("/quiz2")
-	public String theQuiz2(int num1, int num2, RedirectAttributes rttr) {
-		TwoVO two = new TwoVO();
-		two.setNum1(num1);
-		two.setNum2(num2);
-		rttr.addFlashAttribute("n1", two.getNum1());
-		rttr.addFlashAttribute("n2", two.getNum2());
+	public String theQuiz2(TwoVO vo) {
+		log.info("수집된 내용 : " + vo);
 		return "redirect:/quiz/quiz2";
 	}
 }
