@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/quiz/**")
 public class QuizController {
 	@GetMapping("/quiz1")
-	public void QQ1(Model m) {
+	public void friday(Model m) {
 		m.addAttribute("q1", "오늘은 금요일");
 	}
 }
