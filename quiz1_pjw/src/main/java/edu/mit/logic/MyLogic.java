@@ -7,7 +7,7 @@ public class MyLogic {
 			sum += i;
 		return sum;
 	}
-	
+
 	public static int evenAddUp(int num1, int num2) {	// num1 ~ num2까지 짝수만 더해 return
 		int sum = 0;
 		for(int i = num1; i <= num2; i++)
