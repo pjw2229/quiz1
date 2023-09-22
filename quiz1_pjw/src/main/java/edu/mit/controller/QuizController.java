@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mit.domain.TwoVO;
+import edu.mit.logic.MyLogic3;
 import lombok.extern.log4j.Log4j;
 
 @Controller
@@ -25,8 +26,9 @@ public class QuizController {
 	}
 	
 	@PostMapping("/quiz2")
-	public String theQuiz2(TwoVO vo) {
-		log.info("수집된 내용 : " + vo);
-		return "redirect:/quiz/quiz2";
+	public String theQuiz2(TwoVO vo, RedirectAttributes rttr) {
+		MyLogic3 m3 = new MyLogic3();
+		rttr.addFlashAttribute("sum", m3.addUp(vo.getNum1(), vo.getNum2()));
+		return "redirect:/quiz/result";
 	}
 }
